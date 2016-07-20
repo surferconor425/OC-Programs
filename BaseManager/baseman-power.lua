@@ -155,6 +155,9 @@ while endProgram == false do
 		elseif v == "big_battery" then
 			stored = stored + component.invoke(k, "getEnergyStored")
 			max = max + component.invoke(k, "getMaxEnergyStored")
+		elseif v == "br_reactor" then
+			stored = stored + component.invoke(k, "getEnergyStored")
+			max = max + 10000000 --No method for getting max power but max power is a constant.
 		elseif v == "gt_batterybuffer" then
 			stored = stored + math.ceil(component.invoke(k, "getEUStored")*euRf)
 			max = stored + math.ceil(component.invoke(k, "getEUCapacity")*euRf)
